@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+.prodImgs{
+    max-width: 45%;
+}

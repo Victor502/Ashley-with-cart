@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="SCPlugin/dist/css/smart_cart.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <header></header>
+
+    <section class="container">
+        <!-- BEGIN PRODUCTS -->
+        <div class="sc-product-item thumbnail">
+           <div class="prodImgs">
+            <img class="img-thumbnail" data-name="product_image" src="Jeans/00101a.jpg" alt="..."><img class="img-thumbnail" src="Jeans/00101b.jpg">
+            </div>
+            <div class="caption">
+                <h4 data-name="product_name">Cache Jeans</h4>
+                <p data-name="product_desc">Size: S <br>Color: blue
+                    <br>New: $138
+                    <br> Product ID: 00101</p>
+                <hr>
+                <div>
+                    <strong class="">$45</strong>
+                    
+                    <input name="product_price" value="45" type="hidden" />
+                    <input name="product_id" value="00101" type="hidden" />
+                    
+                    <button class="sc-add-to-cart">Add to cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- END PRODUCTS -->
+        
+    </section>
+
+
+
+    <aside class="col-md-4">
+        <!-- Paypal Submit URL : https://www.paypal.com/cgi-bin/webscr -->
+        
+        <!-- Paypal Cart submit form -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
+            <!-- SmartCart element -->
+            <div id="smartcart"></div>
+
+            <!-- Paypal required info, Please update based on your details -->
+            <input name="business" value="dipumedayil@gmail.com" type="hidden">
+            <input name="currency_code" value="USD" type="hidden">
+            <input name="return" value="http://www.yourdomain.com/yoursuccessurl" type="hidden">
+            <input name="cancel_return" value="http://www.yourdomain.com/yourcancelurl" type="hidden">
+
+            <input name="cmd" value="_cart" type="hidden">
+            <input name="upload" value="1" type="hidden">
+        </form>
+    </aside>
+
+    <footer></footer>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="SCPlugin/dist/js/jquery.smartCart.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Initialize Smart Cart    	
+            $('#smartcart').smartCart({
+                submitSettings: {
+                    submitType: 'paypal' // form, paypal, ajax
+                },
+                toolbarSettings: {
+                    checkoutButtonStyle: 'paypal' // default, paypal, image
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
