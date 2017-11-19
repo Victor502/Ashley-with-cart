@@ -4,6 +4,12 @@
 
 
 
+
+@media (min-width: 400px){
+    
+
 .prodImgs{
-    max-width: 45%;
+    max-width: 50%;
 }
+    
+    }
